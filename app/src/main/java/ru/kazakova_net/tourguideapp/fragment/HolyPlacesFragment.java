@@ -36,7 +36,8 @@ public class HolyPlacesFragment extends Fragment {
         attractions.add(new Attraction("Церковь Александра Невского", "пл. Александра Невского, 1", R.drawable.al_nevsk, "Построена в 1894 г."));
         attractions.add(new Attraction("Церковь Иконы Божией Матери Всецарица", "микрорайон Южный", R.drawable.vsetcarica, "Расположена при областном онкологическом диспансере"));
         attractions.add(new Attraction("Преображенский храм", "Леоновское ш., 2", R.drawable.preobr, "Расположена в с. Пехра-Яковлевское"));
-        
+        attractions.add(new Attraction("Храм Михаила Архангела в Никольско-Архангельском", "Черная дорога, 16а", R.drawable.mikhail, "Барокко 18 века"));
+
         // Создание адаптера списка
         AttractionAdapter attractionAdapter = new AttractionAdapter(getActivity(), attractions);
         
@@ -48,5 +49,4 @@ public class HolyPlacesFragment extends Fragment {
         
         return rootView;
     }
-    
 }

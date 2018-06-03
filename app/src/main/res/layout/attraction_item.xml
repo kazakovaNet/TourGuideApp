@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="@dimen/list_item_height"
+    android:padding="8dp"
     android:orientation="vertical">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/attraction_image_view"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
