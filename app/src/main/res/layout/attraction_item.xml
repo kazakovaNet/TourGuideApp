@@ -6,56 +6,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="@dimen/list_item_height"
-    android:padding="8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/attraction_image_view"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
-        android:scaleType="centerCrop"
         android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/lovers_bridge"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/attraction_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:textAppearance="?android:textAppearanceMedium"
+        android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/iconPlay"
+        android:textColor="@color/headerColor"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/attraction_image_view"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="lutti" />
+        tools:text="Мост влюбленных" />
 
     <TextView
         android:id="@+id/attraction_description_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:textAppearance="?android:textAppearanceMedium"
-        app:layout_constraintEnd_toStartOf="@+id/iconPlay"
+        android:textSize="15sp"
+        android:textColor="@color/descriptionColor"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/attraction_image_view"
         app:layout_constraintTop_toBottomOf="@+id/attraction_name_text_view"
-        tools:text="one" />
-
-    <ImageView
-        android:id="@+id/iconPlay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:text="Мост между Балашихой-2 и Новым Светом" />
 </android.support.constraint.ConstraintLayout>

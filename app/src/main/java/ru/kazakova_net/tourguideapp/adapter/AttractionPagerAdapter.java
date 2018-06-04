@@ -8,41 +8,46 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import ru.kazakova_net.tourguideapp.fragment.HolyPlacesFragment;
 import ru.kazakova_net.tourguideapp.fragment.ParksFragment;
+import ru.kazakova_net.tourguideapp.fragment.PlacesFragment;
 import ru.kazakova_net.tourguideapp.fragment.RestaurantsFragment;
 
 public class AttractionPagerAdapter extends FragmentPagerAdapter {
     private Context mContext;
-
+    
     public AttractionPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }
-
+    
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            return new RestaurantsFragment();
+            return new PlacesFragment();
         } else if (position == 1) {
             return new HolyPlacesFragment();
-        } else {
+        } else if (position == 2) {
             return new ParksFragment();
+        } else {
+            return new RestaurantsFragment();
         }
     }
-
+    
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
-
+    
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return "Рестораны";
+            return "Памятники и места";
         } else if (position == 1) {
-            return "Святые места";
+            return "Храмы и церкви";
+        } else if (position == 2) {
+            return "Парки и усадьбы";
         } else {
-            return "Парки";
+            return "Рестораны и кафе";
         }
     }
 }

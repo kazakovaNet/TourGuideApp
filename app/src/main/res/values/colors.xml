@@ -9,4 +9,7 @@
     <color name="tab_text_color">#A8A19E</color>
     <color name="tab_selected_text_color">#FFFFFF</color>
     <color name="tab_indicator_color">#FFFFFF</color>
+
+    <color name="headerColor">#9a8d8d</color>
+    <color name="descriptionColor">#d2c1c2</color>
 </resources>

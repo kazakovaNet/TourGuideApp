@@ -34,7 +34,11 @@ public class RestaurantsFragment extends Fragment {
         // Создание списка достопримечательностей
         final ArrayList<Attraction> attractions = new ArrayList<>();
         attractions.add(new Attraction("Ля Прованс", "ул. Площадь славы, 1", R.drawable.la_provance, "Семейный ресторан французской кухни"));
-        attractions.add(new Attraction("Pizza Roma", "ш. Энтузиастов, 29", R.drawable.pizza_roma, "Roma Pizza - ресторан авторской итальянской кухни"));
+        attractions.add(new Attraction("Pizza Roma", "ш. Энтузиастов, 29", R.drawable.pizza_roma, "Ресторан авторской итальянской кухни"));
+        attractions.add(new Attraction("Food Market", "ул. Свердлова, 3", R.drawable.food_market, "Очень приятное место для небольших посиделок, чтоб зарядиться энергией вкусного кофе и выпечки"));
+        attractions.add(new Attraction("Кафе Носорог", "ул. Вокзальная, 2А", R.drawable.nosorog, "Крафтовое пиво на высоком уровне"));
+        attractions.add(new Attraction("Райский сад", "ул. Текстильщиков, 1А", R.drawable.raiski_sad, "Кафе в кавказском стиле, хороший шашлык"));
+        attractions.add(new Attraction("Кафе-Хинкальная \"ТалавеР\"", "Энтузиастов ш., 7В", R.drawable.talaver, "Грузинская кухня"));
         attractions.add(new Attraction("Додо Пицца", "пр-т Ленина, 23/5", R.drawable.dodo_pizza, "Сеть пиццерий"));
         
         // Создание адаптера списка
