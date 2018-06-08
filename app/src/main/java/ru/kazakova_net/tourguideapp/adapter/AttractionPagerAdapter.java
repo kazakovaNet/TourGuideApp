@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import ru.kazakova_net.tourguideapp.R;
 import ru.kazakova_net.tourguideapp.fragment.HolyPlacesFragment;
 import ru.kazakova_net.tourguideapp.fragment.ParksFragment;
 import ru.kazakova_net.tourguideapp.fragment.PlacesFragment;
@@ -41,13 +42,13 @@ public class AttractionPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return "Памятники и места";
+            return mContext.getString(R.string.monument);
         } else if (position == 1) {
-            return "Храмы и церкви";
+            return mContext.getString(R.string.temples_and_churches);
         } else if (position == 2) {
-            return "Парки и усадьбы";
+            return mContext.getString(R.string.parks_and_homesteads);
         } else {
-            return "Рестораны и кафе";
+            return mContext.getString(R.string.restaurants_and_cafes);
         }
     }
 }

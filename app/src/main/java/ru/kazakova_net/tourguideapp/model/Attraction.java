@@ -29,7 +29,7 @@ public class Attraction {
      * @param name                  название
      * @param address               адрес
      * @param objectImageResourceId идентификатор изображения
-     * @param description
+     * @param description           описание
      */
     public Attraction(String name, String address, int objectImageResourceId, String description) {
         this.mName = name;
@@ -85,6 +85,7 @@ public class Attraction {
                 "mName='" + mName + '\'' +
                 ", mAddress='" + mAddress + '\'' +
                 ", mObjectImageResourceId=" + mObjectImageResourceId +
+                ", mDescription='" + mDescription + '\'' +
                 '}';
     }
 }

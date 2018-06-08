@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="monument">Памятники и места</string>
+    <string name="temples_and_churches">Храмы и церкви</string>
+    <string name="parks_and_homesteads">Парки и усадьбы</string>
+    <string name="restaurants_and_cafes">Рестораны и кафе</string>
 </resources>

@@ -6,7 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -41,13 +43,20 @@ public class PlacesFragment extends Fragment {
         attractions.add(new Attraction("Мост влюбленных", "микр-н Балашиха-2", R.drawable.lovers_bridge, "Мост между Балашихой-2 и Новым Светом"));
         
         // Создание адаптера списка
-        AttractionAdapter attractionAdapter = new AttractionAdapter(getActivity(), attractions);
+        final AttractionAdapter attractionAdapter = new AttractionAdapter(getActivity(), attractions);
         
         // Получение объекта списка
         ListView listView = rootView.findViewById(R.id.attraction_list);
         
         // Назначение списку адаптера
         listView.setAdapter(attractionAdapter);
+    
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getActivity(), "Адрес: " + attractionAdapter.getItem(position).getAddress(), Toast.LENGTH_SHORT).show();
+            }
+        });
         
         return rootView;
     }
