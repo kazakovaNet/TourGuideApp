@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="list_item_height">70dp</dimen>
+    <dimen name="height_listitem">70dp</dimen>
+    <dimen name="padding_listitem_bottom">8dp</dimen>
+    <dimen name="padding_listitem_end">16dp</dimen>
+    <dimen name="padding_listitem_start">16dp</dimen>
+    <dimen name="padding_listitem_top">8dp</dimen>
+    <dimen name="margin_attractionname_end">8dp</dimen>
+    <dimen name="margin_attractionname_start">16dp</dimen>
+    <dimen name="textsize_attractionname">17sp</dimen>
+    <dimen name="margin_attractiondescription_end">8dp</dimen>
+    <dimen name="margin_attractiondescription_start">16dp</dimen>
+    <dimen name="textsize_attractiondescription">15sp</dimen>
 </resources>

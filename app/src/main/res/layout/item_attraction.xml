@@ -5,47 +5,47 @@
     android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="@dimen/list_item_height"
+    android:minHeight="@dimen/height_listitem"
     android:orientation="vertical"
-    android:paddingBottom="8dp"
-    android:paddingEnd="16dp"
-    android:paddingStart="16dp"
-    android:paddingTop="8dp">
+    android:paddingBottom="@dimen/padding_listitem_bottom"
+    android:paddingEnd="@dimen/padding_listitem_end"
+    android:paddingStart="@dimen/padding_listitem_start"
+    android:paddingTop="@dimen/padding_listitem_top">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/attraction_image_view"
-        android:layout_width="@dimen/list_item_height"
+        android:layout_width="@dimen/height_listitem"
         android:layout_height="@dimen/list_item_height"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/lovers_bridge" />
+        tools:src="@drawable/al_nevsk" />
 
     <TextView
         android:id="@+id/attraction_name_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="@dimen/margin_attractionname_end"
+        android:layout_marginStart="@dimen/margin_attractionname_start"
         android:textColor="@color/headerColor"
-        android:textSize="17sp"
+        android:textSize="@dimen/textsize_attractionname"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/attraction_image_view"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Мост влюбленных" />
+        tools:text="@string/hp_name1" />
 
     <TextView
         android:id="@+id/attraction_description_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="@dimen/margin_attractiondescription_end"
+        android:layout_marginStart="@dimen/margin_attractiondescription_start"
         android:textColor="@color/descriptionColor"
-        android:textSize="15sp"
+        android:textSize="@dimen/textsize_attractiondescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/attraction_image_view"
         app:layout_constraintTop_toBottomOf="@+id/attraction_name_text_view"
-        tools:text="Мост между Балашихой-2 и Новым Светом" />
+        tools:text="@string/hp_description1" />
 </android.support.constraint.ConstraintLayout>

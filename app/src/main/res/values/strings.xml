@@ -1,10 +1,108 @@
 <resources>
     <string name="app_name">Tour Guide App</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Tabbed titles -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="monument">Памятники и места</string>
     <string name="temples_and_churches">Храмы и церкви</string>
     <string name="parks_and_homesteads">Парки и усадьбы</string>
     <string name="restaurants_and_cafes">Рестораны и кафе</string>
+
+    <!-- Toast message -->
+    <string name="toast_address">Адрес:</string>
+
+    <!-- Name, address and description of attractions -->
+
+    <!-- Holy places -->
+    <string name="hp_name1">Храм Александра Невского</string>
+    <string name="hp_name2">Церковь Иконы Божией Матери Всецарица</string>
+    <string name="hp_name3">Преображенский храм</string>
+    <string name="hp_name4">Храм Михаила Архангела в Никольско-Архангельском</string>
+    <string name="hp_name5">Храм Покрова Пресвятой Богородицы</string>
+    <string name="hp_name6">Храм Почаевской Иконы Божией Матери</string>
+    <string name="hp_name7">Церковь Владимира равноапостольного</string>
+    <string name="hp_name8">Храм Рождества Пресвятой Богородицы в Трубецком</string>
+    <string name="hp_address1">пл. Александра Невского, 1</string>
+    <string name="hp_address2">микрорайон Южный</string>
+    <string name="hp_address3">Леоновское ш., 2</string>
+    <string name="hp_address4">Черная дорога, 16а</string>
+    <string name="hp_address5">Щелковское ш., стр. 133</string>
+    <string name="hp_address6">Разинское ш., 1а</string>
+    <string name="hp_address7">пл. Александра Невского, 2</string>
+    <string name="hp_address8">Трубецкая, 52а</string>
+    <string name="hp_description1">Белоснежный храм с золотыми куполами реконструирован в 2002 г. (построен в 1894 г.)</string>
+    <string name="hp_description2">Расположена при областном онкологическом диспансере</string>
+    <string name="hp_description3">Храм конца XVIII века, расположен на высоком мысу над маленькой речкой Пехоркой</string>
+    <string name="hp_description5">Ампирный храм архитектора Бове был построен в начале XIX века. Закрывался, но был возвращен верующим в 1992 году</string>
+    <string name="hp_description4">Барокко 18 века</string>
+    <string name="hp_description6">Строящийся храм в районе железнодорожной станции Салтыковская</string>
+    <string name="hp_description7">Небольшой крестильный храм в кирпичном двухэтажном доме причта при Александро-Невской церкви. Здание увенчано звонницей</string>
+    <string name="hp_description8">Церковь середины XIX века</string>
+
+    <!-- Parks -->
+    <string name="par_name1">Парк Пехорка</string>
+    <string name="par_name2">Озерный лесопарк</string>
+    <string name="par_name3">Лисья Гора</string>
+    <string name="par_name4">Усадьба Горенки</string>
+    <string name="par_name5">Усадьба Пехра-Яковлевское</string>
+    <string name="par_name6">Парк Аллея Славы</string>
+    <string name="par_name7">Картинная галерея городского округа</string>
+    <string name="par_address1">ул. Парковая, вл. 4</string>
+    <string name="par_address2">г. Балашиха</string>
+    <string name="par_address3">Леоновское ш., 1</string>
+    <string name="par_address4">Энтузиастов ш., 6</string>
+    <string name="par_address5">Леоновское ш., 2</string>
+    <string name="par_address6">мкрн. Железнодорожный, ул. Советская, 18</string>
+    <string name="par_address7">пр-т Ленина, 10</string>
+    <string name="par_description1">Центральный парк города. Начата реконструкция в 2017 г.</string>
+    <string name="par_description2">Парк культуры и отдыха</string>
+    <string name="par_description3">Зона катания на горных лыжах и сноубордах</string>
+    <string name="par_description4">В начале 18 века Горенки принадлежали князьям Долгоруким</string>
+    <string name="par_description5">Усадьба князей Голицыных</string>
+    <string name="par_description6">Парк культуры и отдыха</string>
+    <string name="par_description7">В коллекции около 400 предметов 1930–2013 года живописи советского и постсоветского периода</string>
+
+    <!-- Places -->
+    <string name="pl_name1">Памятник дворнику</string>
+    <string name="pl_name2">Фонтан \"Глыба\"</string>
+    <string name="pl_name3">Памятник павшим воинам-землякам</string>
+    <string name="pl_name4">Могила Майкла Лунна</string>
+    <string name="pl_name5">Памяти жертв политических репресий</string>
+    <string name="pl_name6">Мост влюбленных</string>
+    <string name="pl_address1">пр-т. Ленина, 45</string>
+    <string name="pl_address2">ул. Советская, 5/8</string>
+    <string name="pl_address3">площадь Славы</string>
+    <string name="pl_address4">с. Никольское-Трубецкое</string>
+    <string name="pl_address5">пр-т. Ленина, 6</string>
+    <string name="pl_address6">микр-н Балашиха-2</string>
+    <string name="pl_description1">Необычный памятник на центральной улице города</string>
+    <string name="pl_description2">На некотором расстоянии производит впечатление висящего в воздухе камня, из которого вниз падает поток воды</string>
+    <string name="pl_description3">Памятник в виде стеллы с \"вечным огнем\"</string>
+    <string name="pl_description4">Могила англичанина, одного из основателей города</string>
+    <string name="pl_description5">Памятник в честь 147 жителей Балашихи, осужденных по политическим мотивам</string>
+    <string name="pl_description6">Мост между Балашихой-2 и Новым Светом</string>
+
+    <!-- Restaurants and cafes -->
+    <string name="res_name1">Ля Прованс</string>
+    <string name="res_name2">Pizza Roma</string>
+    <string name="res_name3">Food Market</string>
+    <string name="res_name4">Кафе Носорог</string>
+    <string name="res_name5">Райский сад</string>
+    <string name="res_name6">Кафе-Хинкальная \"ТалавеР\"</string>
+    <string name="res_name7">Додо Пицца</string>
+    <string name="res_address1">ул. Площадь славы, 1</string>
+    <string name="res_address2">ш. Энтузиастов, 29</string>
+    <string name="res_address3">ул. Свердлова, 3</string>
+    <string name="res_address4">ул. Вокзальная, 2А</string>
+    <string name="res_address5">ул. Текстильщиков, 1А</string>
+    <string name="res_address6">Энтузиастов ш., 7В</string>
+    <string name="res_address7">пр-т Ленина, 23/5</string>
+    <string name="res_description1">Семейный ресторан французской кухни</string>
+    <string name="res_description2">Ресторан авторской итальянской кухни</string>
+    <string name="res_description3">Очень приятное место для небольших посиделок, чтоб зарядиться энергией вкусного кофе и выпечки</string>
+    <string name="res_description4">Крафтовое пиво на высоком уровне</string>
+    <string name="res_description5">Кафе в кавказском стиле, хороший шашлык</string>
+    <string name="res_description6">Грузинская кухня</string>
+    <string name="res_description7">Сеть пиццерий</string>
+
 </resources>

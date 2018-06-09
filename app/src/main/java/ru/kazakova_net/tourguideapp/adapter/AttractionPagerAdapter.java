@@ -13,6 +13,7 @@ import ru.kazakova_net.tourguideapp.fragment.PlacesFragment;
 import ru.kazakova_net.tourguideapp.fragment.RestaurantsFragment;
 
 public class AttractionPagerAdapter extends FragmentPagerAdapter {
+    private static final int MAX_TABS = 4;
     private Context mContext;
     
     public AttractionPagerAdapter(Context context, FragmentManager fm) {
@@ -35,7 +36,7 @@ public class AttractionPagerAdapter extends FragmentPagerAdapter {
     
     @Override
     public int getCount() {
-        return 4;
+        return MAX_TABS;
     }
     
     @Nullable

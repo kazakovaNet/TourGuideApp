@@ -37,24 +37,24 @@ public class AttractionAdapter extends ArrayAdapter<Attraction> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // Проверяем можно ли переиспользовать имеющийся View, в противном случае получаем новый из xml
+        // A new View object is formed from xml in case it is impossible to use the available
         View listItemView = convertView;
         
         if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.attraction_item, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.item_attraction, parent, false);
         }
         
-        // Получение объекта Attraction, расположенного в указанной позиции в наборе объектов
+        // Obtaining an Attraction object located at a specified position in a set of objects
         Attraction attraction = getItem(position);
         
-        // Получение TextView
+        // Getting the TextView
         TextView attractionNameTextView = listItemView.findViewById(R.id.attraction_name_text_view);
         TextView attractionDescriptionTextView = listItemView.findViewById(R.id.attraction_description_text_view);
         
-        // Получение ImageView
+        // Getting the ImageView
         ImageView attractionImageView = listItemView.findViewById(R.id.attraction_image_view);
         
-        // Получение названия достопримечательности и назначение текстом для TextView
+        // Getting property sights and setting values for widgets
         if (attraction != null) {
             attractionNameTextView.setText(attraction.getName());
             attractionDescriptionTextView.setText(attraction.getDescription());
@@ -63,7 +63,7 @@ public class AttractionAdapter extends ArrayAdapter<Attraction> {
             attractionImageView.setVisibility(View.VISIBLE);
         }
         
-        // Возврат элемента списка с названием достопримечательности
+        // Returning a list item with a filled in content
         return listItemView;
     }
 }

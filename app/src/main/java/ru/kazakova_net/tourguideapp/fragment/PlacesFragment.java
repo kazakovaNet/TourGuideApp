@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import ru.kazakova_net.tourguideapp.R;
 import ru.kazakova_net.tourguideapp.adapter.AttractionAdapter;
@@ -30,31 +31,31 @@ public class PlacesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Получение корневого элемента
-        View rootView = inflater.inflate(R.layout.attraction_list, container, false);
-        
-        // Создание списка достопримечательностей
+        // Getting the root element
+        View rootView = inflater.inflate(R.layout.list_attraction, container, false);
+    
+        // Create a list of attractions
         final ArrayList<Attraction> attractions = new ArrayList<>();
-        attractions.add(new Attraction("Памятник дворнику", "пр-т. Ленина, 45", R.drawable.street_cleaner, "Необычный памятник на центральной улице города"));
-        attractions.add(new Attraction("Фонтан \"Глыба\"", "ул. Советская, 5/8", R.drawable.rock_fountain, "На некотором расстоянии производит впечатление висящего в воздухе камня, из которого вниз падает поток воды"));
-        attractions.add(new Attraction("Памятник павшим воинам-землякам", "площадь Славы", R.drawable.soldiers_brothers, "Памятник в виде стеллы с \"вечным огнем\""));
-        attractions.add(new Attraction("Могила Майкла Лунна", "с. Никольское-Трубецкое", R.drawable.grave_m_lunn, "Могила англичанина, одного из основателей города"));
-        attractions.add(new Attraction("Памяти жертв политических репресий", "пр-т. Ленина, 6", R.drawable.victims_repression, "Памятник в честь 147 жителей Балашихи, осужденных по политическим мотивам"));
-        attractions.add(new Attraction("Мост влюбленных", "микр-н Балашиха-2", R.drawable.lovers_bridge, "Мост между Балашихой-2 и Новым Светом"));
-        
-        // Создание адаптера списка
-        final AttractionAdapter attractionAdapter = new AttractionAdapter(getActivity(), attractions);
-        
-        // Получение объекта списка
+        attractions.add(new Attraction(getString(R.string.pl_name1), getString(R.string.pl_address1), R.drawable.street_cleaner, getString(R.string.pl_description1)));
+        attractions.add(new Attraction(getString(R.string.pl_name2), getString(R.string.pl_address2), R.drawable.rock_fountain, getString(R.string.pl_description2)));
+        attractions.add(new Attraction(getString(R.string.pl_name3), getString(R.string.pl_address3), R.drawable.soldiers_brothers, getString(R.string.pl_description3)));
+        attractions.add(new Attraction(getString(R.string.pl_name4), getString(R.string.pl_address4), R.drawable.grave_m_lunn, getString(R.string.pl_description4)));
+        attractions.add(new Attraction(getString(R.string.pl_name5), getString(R.string.pl_address5), R.drawable.victims_repression, getString(R.string.pl_description5)));
+        attractions.add(new Attraction(getString(R.string.pl_name6), getString(R.string.pl_address6), R.drawable.lovers_bridge, getString(R.string.pl_description6)));
+    
+        // Create a list adapter
+        final AttractionAdapter attractionAdapter = new AttractionAdapter(Objects.requireNonNull(getActivity()), attractions);
+    
+        // Getting a list object
         ListView listView = rootView.findViewById(R.id.attraction_list);
-        
-        // Назначение списку адаптера
+    
+        // Assigning an adapter to the list
         listView.setAdapter(attractionAdapter);
     
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "Адрес: " + attractionAdapter.getItem(position).getAddress(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.toast_address) + Objects.requireNonNull(attractionAdapter.getItem(position)).getAddress(), Toast.LENGTH_SHORT).show();
             }
         });
         

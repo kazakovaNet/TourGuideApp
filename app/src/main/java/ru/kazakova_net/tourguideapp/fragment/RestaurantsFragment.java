@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import ru.kazakova_net.tourguideapp.R;
 import ru.kazakova_net.tourguideapp.adapter.AttractionAdapter;
@@ -30,32 +31,32 @@ public class RestaurantsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Получение корневого элемента
-        View rootView = inflater.inflate(R.layout.attraction_list, container, false);
-        
-        // Создание списка достопримечательностей
+        // Getting the root element
+        View rootView = inflater.inflate(R.layout.list_attraction, container, false);
+    
+        // Create a list of attractions
         final ArrayList<Attraction> attractions = new ArrayList<>();
-        attractions.add(new Attraction("Ля Прованс", "ул. Площадь славы, 1", R.drawable.la_provance, "Семейный ресторан французской кухни"));
-        attractions.add(new Attraction("Pizza Roma", "ш. Энтузиастов, 29", R.drawable.pizza_roma, "Ресторан авторской итальянской кухни"));
-        attractions.add(new Attraction("Food Market", "ул. Свердлова, 3", R.drawable.food_market, "Очень приятное место для небольших посиделок, чтоб зарядиться энергией вкусного кофе и выпечки"));
-        attractions.add(new Attraction("Кафе Носорог", "ул. Вокзальная, 2А", R.drawable.nosorog, "Крафтовое пиво на высоком уровне"));
-        attractions.add(new Attraction("Райский сад", "ул. Текстильщиков, 1А", R.drawable.raiski_sad, "Кафе в кавказском стиле, хороший шашлык"));
-        attractions.add(new Attraction("Кафе-Хинкальная \"ТалавеР\"", "Энтузиастов ш., 7В", R.drawable.talaver, "Грузинская кухня"));
-        attractions.add(new Attraction("Додо Пицца", "пр-т Ленина, 23/5", R.drawable.dodo_pizza, "Сеть пиццерий"));
-        
-        // Создание адаптера списка
-        final AttractionAdapter attractionAdapter = new AttractionAdapter(getActivity(), attractions);
-        
-        // Получение объекта списка
+        attractions.add(new Attraction(getString(R.string.res_name1), getString(R.string.res_address1), R.drawable.la_provance, getString(R.string.res_description1)));
+        attractions.add(new Attraction(getString(R.string.res_name2), getString(R.string.res_address2), R.drawable.pizza_roma, getString(R.string.res_description2)));
+        attractions.add(new Attraction(getString(R.string.res_name3), getString(R.string.res_address3), R.drawable.food_market, getString(R.string.res_description3)));
+        attractions.add(new Attraction(getString(R.string.res_name4), getString(R.string.res_address4), R.drawable.nosorog, getString(R.string.res_description4)));
+        attractions.add(new Attraction(getString(R.string.res_name5), getString(R.string.res_address5), R.drawable.raiski_sad, getString(R.string.res_description5)));
+        attractions.add(new Attraction(getString(R.string.res_name6), getString(R.string.res_address6), R.drawable.talaver, getString(R.string.res_description6)));
+        attractions.add(new Attraction(getString(R.string.res_name7), getString(R.string.res_address7), R.drawable.dodo_pizza, getString(R.string.res_description7)));
+    
+        // Create a list adapter
+        final AttractionAdapter attractionAdapter = new AttractionAdapter(Objects.requireNonNull(getActivity()), attractions);
+    
+        // Getting a list object
         ListView listView = rootView.findViewById(R.id.attraction_list);
-        
-        // Назначение списку адаптера
+    
+        // Assigning an adapter to the list
         listView.setAdapter(attractionAdapter);
     
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "Адрес: " + attractionAdapter.getItem(position).getAddress(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.toast_address) + Objects.requireNonNull(attractionAdapter.getItem(position)).getAddress(), Toast.LENGTH_SHORT).show();
             }
         });
         

@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import ru.kazakova_net.tourguideapp.R;
 import ru.kazakova_net.tourguideapp.adapter.AttractionAdapter;
@@ -30,32 +31,32 @@ public class ParksFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Получение корневого элемента
-        View rootView = inflater.inflate(R.layout.attraction_list, container, false);
-        
-        // Создание списка достопримечательностей
+        // Getting the root element
+        View rootView = inflater.inflate(R.layout.list_attraction, container, false);
+    
+        // Create a list of attractions
         final ArrayList<Attraction> attractions = new ArrayList<>();
-        attractions.add(new Attraction("Парк Пехорка", "ул. Парковая, вл. 4", R.drawable.pehorka, "Центральный парк города. Начата реконструкция в 2017 г."));
-        attractions.add(new Attraction("Озерный лесопарк", "г. Балашиха", R.drawable.ozernyi_lesopark, "Парк культуры и отдыха"));
-        attractions.add(new Attraction("Лисья Гора", "Леоновское ш., 1", R.drawable.lisya_gora, "Зона катания на горных лыжах и сноубордах"));
-        attractions.add(new Attraction("Усадьба Горенки", "Энтузиастов ш., 6", R.drawable.gorenki, "В начале 18 века Горенки принадлежали князьям Долгоруким"));
-        attractions.add(new Attraction("Усадьба Пехра-Яковлевское", "Леоновское ш., 2", R.drawable.pekhra_yakovlevskoe, "Усадьба князей Голицыных"));
-        attractions.add(new Attraction("Парк Аллея Славы", "мкрн. Железнодорожный, ул. Советская, 18", R.drawable.alleya_slavy, "Парк культуры и отдыха"));
-        attractions.add(new Attraction("Картинная галерея городского округа", "пр-т Ленина, 10", R.drawable.art_gallery, "В коллекции около 400 предметов 1930-2013 года живописи советского и постсоветского периода"));
-        
-        // Создание адаптера списка
-        final AttractionAdapter attractionAdapter = new AttractionAdapter(getActivity(), attractions);
-        
-        // Получение объекта списка
+        attractions.add(new Attraction(getString(R.string.par_name1), getString(R.string.par_address1), R.drawable.pehorka, getString(R.string.par_description1)));
+        attractions.add(new Attraction(getString(R.string.par_name2), getString(R.string.par_address2), R.drawable.ozernyi_lesopark, getString(R.string.par_description2)));
+        attractions.add(new Attraction(getString(R.string.par_name3), getString(R.string.par_address3), R.drawable.lisya_gora, getString(R.string.par_description3)));
+        attractions.add(new Attraction(getString(R.string.par_name4), getString(R.string.par_address4), R.drawable.gorenki, getString(R.string.par_description4)));
+        attractions.add(new Attraction(getString(R.string.par_name5), getString(R.string.par_address5), R.drawable.pekhra_yakovlevskoe, getString(R.string.par_description5)));
+        attractions.add(new Attraction(getString(R.string.par_name6), getString(R.string.par_address6), R.drawable.alleya_slavy, getString(R.string.par_description6)));
+        attractions.add(new Attraction(getString(R.string.par_name7), getString(R.string.par_address7), R.drawable.art_gallery, getString(R.string.par_description7)));
+    
+        // Create a list adapter
+        final AttractionAdapter attractionAdapter = new AttractionAdapter(Objects.requireNonNull(getActivity()), attractions);
+    
+        // Getting a list object
         ListView listView = rootView.findViewById(R.id.attraction_list);
-        
-        // Назначение списку адаптера
+    
+        // Assigning an adapter to the list
         listView.setAdapter(attractionAdapter);
     
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "Адрес: " + attractionAdapter.getItem(position).getAddress(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.toast_address) + Objects.requireNonNull(attractionAdapter.getItem(position)).getAddress(), Toast.LENGTH_SHORT).show();
             }
         });
         

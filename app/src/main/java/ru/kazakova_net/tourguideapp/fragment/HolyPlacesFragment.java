@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import ru.kazakova_net.tourguideapp.R;
 import ru.kazakova_net.tourguideapp.adapter.AttractionAdapter;
@@ -30,33 +31,33 @@ public class HolyPlacesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Получение корневого элемента
-        View rootView = inflater.inflate(R.layout.attraction_list, container, false);
+        // Getting the root element
+        View rootView = inflater.inflate(R.layout.list_attraction, container, false);
         
-        // Создание списка достопримечательностей
+        // Create a list of attractions
         final ArrayList<Attraction> attractions = new ArrayList<>();
-        attractions.add(new Attraction("Храм Александра Невского", "пл. Александра Невского, 1", R.drawable.al_nevsk, "Белоснежный храм с золотыми куполами реконструирован в 2002 г. (построен в 1894 г.)"));
-        attractions.add(new Attraction("Церковь Иконы Божией Матери Всецарица", "микрорайон Южный", R.drawable.vsetcarica, "Расположена при областном онкологическом диспансере"));
-        attractions.add(new Attraction("Преображенский храм", "Леоновское ш., 2", R.drawable.preobr, "Храм конца XVIII века, расположен на высоком мысу над маленькой речкой Пехоркой"));
-        attractions.add(new Attraction("Храм Михаила Архангела в Никольско-Архангельском", "Черная дорога, 16а", R.drawable.mikhail, "Барокко 18 века"));
-        attractions.add(new Attraction("Храм Покрова Пресвятой Богородицы", "Щелковское ш., стр. 133", R.drawable.protection_holy_virgin, "Ампирный храм архитектора Бове был построен в начале XIX века. Закрывался, но был возвращен верующим в 1992 году"));
-        attractions.add(new Attraction("Храм Почаевской Иконы Божией Матери", "Разинское ш., 1а", R.drawable.pochayevskaya_icon, "Строящийся храм в районе железнодорожной станции Салтыковская"));
-        attractions.add(new Attraction("Церковь Владимира равноапостольного", "пл. Александра Невского, 2", R.drawable.st_vladimir, "Небольшой крестильный храм в кирпичном двухэтажном доме причта при Александро-Невской церкви. Здание увенчано звонницей"));
-        attractions.add(new Attraction("Храм Рождества Пресвятой Богородицы в Трубецком", "Трубецкая, 52а", R.drawable.nativity_virgin, "Церковь середины XIX века"));
+        attractions.add(new Attraction(getString(R.string.hp_name1), getString(R.string.hp_address1), R.drawable.al_nevsk, getString(R.string.hp_description1)));
+        attractions.add(new Attraction(getString(R.string.hp_name2), getString(R.string.hp_address2), R.drawable.vsetcarica, getString(R.string.hp_description2)));
+        attractions.add(new Attraction(getString(R.string.hp_name3), getString(R.string.hp_address3), R.drawable.preobr, getString(R.string.hp_description3)));
+        attractions.add(new Attraction(getString(R.string.hp_name4), getString(R.string.hp_address4), R.drawable.mikhail, getString(R.string.hp_description4)));
+        attractions.add(new Attraction(getString(R.string.hp_name5), getString(R.string.hp_address5), R.drawable.protection_holy_virgin, getString(R.string.hp_description5)));
+        attractions.add(new Attraction(getString(R.string.hp_name6), getString(R.string.hp_address6), R.drawable.pochayevskaya_icon, getString(R.string.hp_description6)));
+        attractions.add(new Attraction(getString(R.string.hp_name7), getString(R.string.hp_address7), R.drawable.st_vladimir, getString(R.string.hp_description7)));
+        attractions.add(new Attraction(getString(R.string.hp_name8), getString(R.string.hp_address8), R.drawable.nativity_virgin, getString(R.string.hp_description8)));
         
-        // Создание адаптера списка
-        final AttractionAdapter attractionAdapter = new AttractionAdapter(getActivity(), attractions);
+        // Create a list adapter
+        final AttractionAdapter attractionAdapter = new AttractionAdapter(Objects.requireNonNull(getActivity()), attractions);
         
-        // Получение объекта списка
+        // Getting a list object
         ListView listView = rootView.findViewById(R.id.attraction_list);
         
-        // Назначение списку адаптера
+        // Assigning an adapter to the list
         listView.setAdapter(attractionAdapter);
         
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "Адрес: " + attractionAdapter.getItem(position).getAddress(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.toast_address) + Objects.requireNonNull(attractionAdapter.getItem(position)).getAddress(), Toast.LENGTH_SHORT).show();
             }
         });
         
